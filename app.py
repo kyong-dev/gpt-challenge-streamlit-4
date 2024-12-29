@@ -8,6 +8,7 @@ import openai as client
 import json
 import time
 import streamlit as st
+import os
 
 
 st.set_page_config(
@@ -124,6 +125,8 @@ with st.sidebar:
     st.write("<a href='https://github.com/kyong-dev/gpt-challenge-streamlit-3'>https://github.com/kyong-dev/gpt-challenge-streamlit-3</a>", unsafe_allow_html=True)
     
 
+if openai_api_key:
+    os.environ["OPENAI_API_KEY"] = openai_api_key
 
 
 inputs = st.text_input("Ask a question to the assistant.")
@@ -136,7 +139,7 @@ if inputs:
         model="gpt-4-1106-preview",
         tools=functions,
     )
-    
+
     st.write("Assistant is running...")
 
     thread = client.beta.threads.create(
