@@ -125,16 +125,18 @@ with st.sidebar:
     
 
 
-assistant = client.beta.assistants.create(
-    name="Search topic assistant",
-    instructions="Search for information on DuckDuckGo and Wikipedia.",
-    model="gpt-4-1106-preview",
-    tools=functions,
-)
 
 inputs = st.text_input("Ask a question to the assistant.")
 
 if inputs:
+
+    assistant = client.beta.assistants.create(
+        name="Search topic assistant",
+        instructions="Search for information on DuckDuckGo and Wikipedia.",
+        model="gpt-4-1106-preview",
+        tools=functions,
+    )
+    
     st.write("Assistant is running...")
 
     thread = client.beta.threads.create(
