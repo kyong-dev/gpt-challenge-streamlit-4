@@ -122,7 +122,7 @@ def submit_tool_outputs(run_id, thread_id):
 with st.sidebar:
     openai_api_key = st.text_input("Write down your OpenAI key", placeholder="sk-proj-NDE*********")
 
-    st.write("<a href='https://github.com/kyong-dev/gpt-challenge-streamlit-3'>https://github.com/kyong-dev/gpt-challenge-streamlit-3</a>", unsafe_allow_html=True)
+    st.write("<a href='https://github.com/kyong-dev/gpt-challenge-streamlit-4'>https://github.com/kyong-dev/gpt-challenge-streamlit-4</a>", unsafe_allow_html=True)
     
 
 if openai_api_key:
